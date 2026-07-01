@@ -16,11 +16,11 @@ jobs:
 
       - name: docker up && install dependencies
         run: |
-          docker compose run --rm php_composer composer install \
+          docker compose run --rm php composer install \
           --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
 
       - name: Run tests
-        run: docker compose run --rm php_composer vendor/bin/phpunit
+        run: docker compose run --rm php vendor/bin/phpunit
 
       - name: Stop Docker and clean container
         if: always()

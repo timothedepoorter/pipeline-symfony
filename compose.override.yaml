@@ -1,0 +1,7 @@
+services:
+  postgres:
+    ports:
+      - "5442:5432"
+  serveur_symfony:
+    ports:
+      - "8080:80"

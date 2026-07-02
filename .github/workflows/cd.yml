@@ -1,0 +1,23 @@
+name: cd.yml
+on:
+  push:
+    branches:
+      - prod
+    tags:
+      - 'v*-*-*'
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build-and-push-on-ghcr:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+

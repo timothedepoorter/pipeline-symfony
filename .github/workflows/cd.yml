@@ -1,4 +1,4 @@
-name: cd.yml
+name: cd
 on:
   push:
     branches:
